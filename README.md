@@ -1,4 +1,4 @@
-# AI Hedge Fund Analysis Software - GUI Extension
+# AI Hedge Fund Analysis Software - GUI Extension  [中文](https://github.com/hengruiyun/ai-hedge-fund-gui/blob/main/README_cn.md)
 
 This project provides a Graphical User Interface (GUI) for the AI hedge fund analysis software originally developed by virattt. It aims to simplify interaction with the powerful underlying AI-driven financial analysis tools.
 
