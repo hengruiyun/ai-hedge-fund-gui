@@ -27,7 +27,7 @@ AI驱动的软件开发代表了技术革新的重要里程碑。通过AI完整�
 2.  **添加GUI文件**：
     下载最新版本的GUI扩展。将下载的文件放到您在上一步克隆的 ai-hedge-fund 目录中。
     ```bash
-    git clone https://github.com/virattt/ai-hedge-fund.git
+    git clone https://github.com/hengruiyun/ai-hedge-fund-gui.git
     copy ai-hedge-fund-gui\*.*  ai-hedge-fund
     copy ai-hedge-fund-gui\src\*.*  ai-hedge-fund\src
     cd ai-hedge-fund
