@@ -27,9 +27,9 @@ To use this GUI extension, follow these steps:
 2.  **Add GUI Files**:
     Download the latest version of the GUI extension. Place the downloaded files into the `ai-hedge-fund` directory you cloned in the previous step.
     ```bash
-    git clone https://github.com/virattt/ai-hedge-fund.git # This seems to be a duplicate instruction from the original, keeping for fidelity
-    copy ai-hedge-fund-gui\*.*  ai-hedge-fund
-    copy ai-hedge-fund-gui\src\*.*  ai-hedge-fund\src
+    git clone https://github.com/hengruiyun/ai-hedge-fund-gui.git
+    copy /y ai-hedge-fund-gui\*.*  ai-hedge-fund
+    copy /y ai-hedge-fund-gui\src\*.*  ai-hedge-fund\src
     cd ai-hedge-fund
     ```
 
