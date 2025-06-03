@@ -21,39 +21,39 @@ AI驱动的软件开发代表了技术革新的重要里程碑。通过AI完整�
 
 1.  **克隆原始代码仓库**：
     首先，您需要从virattt的代码仓库克隆基础的 ai-hedge-fund 项目。
-
+    ```bash
     git clone https://github.com/virattt/ai-hedge-fund.git
-
+    ```
 2.  **添加GUI文件**：
     下载最新版本的GUI扩展。将下载的文件放到您在上一步克隆的 ai-hedge-fund 目录中。
-
+    ```bash
     git clone https://github.com/virattt/ai-hedge-fund.git
     copy ai-hedge-fund-gui\*.*  ai-hedge-fund
     copy ai-hedge-fund-gui\src\*.*  ai-hedge-fund\src
     cd ai-hedge-fund
-
+    ```
 3.  **设置环境和依赖项**：
     强烈建议使用虚拟环境。
-
+    ```bash
     uv venv --python=3.10
     .venv\Scripts\activate
     uv pip install -r requirements.txt
-
+    ```
 4.  **配置API密钥**：
     该软件需要AI模型提供商（例如 OpenAI, Groq）的API密钥，可能还需要金融数据源的API密钥。
     *   将 .env.example 文件复制为 .env：
-
+    ```bash
         copy /y  .env.example .env
-
+    ```
     *   编辑 .env 文件并添加您的API密钥。
     *   或者，您可以在启动GUI后直接在GUI中配置API密钥。GUI将帮助创建或更新 .env 文件。
 
 5.  **运行GUI**：
-
+    ```bash
     gui
     或者
     uv run gui_launcher.py
-
+    ```
 ![a8](https://github.com/user-attachments/assets/6ad676c8-d40f-4c11-85a3-229ab1f258be)
 
 
