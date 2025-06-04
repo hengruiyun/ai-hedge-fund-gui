@@ -174,9 +174,16 @@ def run_hedge_fund_gui(
     print("=" * 60)
     
     try:
-        # 解析股票代码
+        # Parse tickers from comma-separated string - 修复：过滤掉空字符串
         if isinstance(tickers, str):
-            tickers = [ticker.strip() for ticker in tickers.split(",")]
+            tickers = [ticker.strip() for ticker in tickers.split(",") if ticker.strip()]
+        else:
+            # 如果已经是列表，也要过滤空字符串
+            tickers = [ticker.strip() for ticker in tickers if ticker.strip()]
+        
+        # 确保tickers不为空
+        if not tickers:
+            raise ValueError("请至少输入一个有效的股票代码")
         
         print(f"📈 分析股票: {', '.join(tickers)}")
         
@@ -334,8 +341,13 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    # Parse tickers from comma-separated string
-    tickers = [ticker.strip() for ticker in args.tickers.split(",")]
+    # Parse tickers from comma-separated string - 修复：过滤掉空字符串
+    tickers = [ticker.strip() for ticker in args.tickers.split(",") if ticker.strip()]
+    
+    # 确保tickers不为空
+    if not tickers:
+        print("❌ 错误：请至少输入一个有效的股票代码")
+        sys.exit(1)
 
     # Select analysts
     selected_analysts = None
