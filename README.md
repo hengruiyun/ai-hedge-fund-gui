@@ -19,50 +19,21 @@ AI-driven software development represents a significant milestone in technologic
 To use this GUI extension, follow these steps:
 
 1.  **Clone the Original Repository**:
-    First, you need to clone the base ai-hedge-fund project from virattt's repository.
-    ```bash
-    git clone https://github.com/virattt/ai-hedge-fund.git
-    ```
-
-2.  **Add GUI Files**:
     Download the latest version of the GUI extension. Place the downloaded files into the `ai-hedge-fund` directory you cloned in the previous step.
     ```bash
     git clone https://github.com/hengruiyun/ai-hedge-fund-gui.git
-    copy /y ai-hedge-fund-gui\*.*  ai-hedge-fund
-    copy /y ai-hedge-fund-gui\src\*.*  ai-hedge-fund\src
-    cd ai-hedge-fund
+    cd ai-hedge-fund-gui
     ```
-
-3.  **Set Up Environment and Dependencies**:
-    It is highly recommended to use a virtual environment.
-    ```bash
-    uv venv --python=3.10
-    .venv\Scripts\activate
-    uv pip install -r requirements.txt
-    ```
-
-4.  **Configure API Keys**:
-    The software requires API keys from AI model providers (e.g., OpenAI, Groq) and potentially API keys for financial data sources.
-    *   Copy the `.env.example` file to `.env`:
-        ```bash
-        copy /y  .env.example .env
-        ```
-    *   Edit the `.env` file and add your API keys.
-    *   Alternatively, you can configure API keys directly in the GUI after launching it. The GUI will help create or update the `.env` file.
-
-5.  **Run the GUI**:
+2.  **Run the GUI**:
     ```bash
     gui
     ```
-    or
-    ```bash
-    uv run gui_launcher.py
-    ```
+
 ![a1](https://github.com/user-attachments/assets/14183595-f470-41dc-b5c2-1f902f5cb128)
 
 ## Configuration Notes
 
-API keys and other settings are managed via the `.env` file in the root of the `ai-hedge-fund` directory and through the GUI itself.
+API keys and other settings are managed via the `.env` file in the `ai-hedge-fund-gui` directory and through the GUI itself.
 
 *   **Analyst Selection**: Choose the AI analysts to participate in the analysis in the "Analysts" tab.
 *   **API Keys**: Enter your API keys in the "API Keys" tab of the GUI or by editing the `.env` file. At least one AI provider key is usually required.
