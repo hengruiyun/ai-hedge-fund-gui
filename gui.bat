@@ -11,7 +11,7 @@ rem Check if Python 3.10+ is available
 echo [1/5] Checking Python version...
 python --version >nul 2>&1
 if errorlevel 1 (
-    echo ❌ Python not found in PATH
+    echo  Python not found in PATH
     goto :setup_venv
 )
 
@@ -29,13 +29,13 @@ rem Check if version is 3.10 or higher
 if %MAJOR% LSS 3 goto :setup_venv
 if %MAJOR% EQU 3 if %MINOR% LSS 10 goto :setup_venv
 
-echo ✅ Python %PYTHON_VERSION% meets requirements (3.10+)
+echo  Python %PYTHON_VERSION% meets requirements (3.10+)
 goto :check_venv
 
 :setup_venv
 echo [2/5] Setting up Python 3.10 virtual environment...
 if not exist "uv.exe" (
-    echo ❌ uv.exe not found in current directory
+    echo  uv.exe not found in current directory
     echo Please ensure uv.exe is available
     pause
     exit /b 1
@@ -44,37 +44,37 @@ if not exist "uv.exe" (
 echo Creating virtual environment with Python 3.10...
 uv.exe venv --python=3.10
 if errorlevel 1 (
-    echo ❌ Failed to create virtual environment
+    echo  Failed to create virtual environment
     pause
     exit /b 1
 )
-echo ✅ Virtual environment created successfully
+echo  Virtual environment created successfully
 goto :install_deps
 
 :check_venv
 echo [2/5] Checking virtual environment...
 if exist ".venv" (
-    echo ✅ Virtual environment already exists
+    echo  Virtual environment already exists
 ) else (
     echo Creating virtual environment...
     if not exist "uv.exe" (
-        echo ❌ uv.exe not found in current directory
+        echo  uv.exe not found in current directory
         pause
         exit /b 1
     )
     uv.exe venv --python=3.10
     if errorlevel 1 (
-        echo ❌ Failed to create virtual environment
+        echo  Failed to create virtual environment
         pause
         exit /b 1
     )
-    echo ✅ Virtual environment created successfully
+    echo  Virtual environment created successfully
 )
 
 :install_deps
 echo [3/5] Installing dependencies...
 if not exist "requirements.txt" (
-    echo ❌ requirements.txt not found
+    echo  requirements.txt not found
     pause
     exit /b 1
 )
@@ -82,11 +82,11 @@ if not exist "requirements.txt" (
 echo Installing packages from requirements.txt...
 uv.exe pip install -r requirements.txt
 if errorlevel 1 (
-    echo ❌ Failed to install dependencies
+    echo  Failed to install dependencies
     pause
     exit /b 1
 )
-echo ✅ Dependencies installed successfully
+echo  Dependencies installed successfully
 
 :rename_pyproject
 echo [4/5] Checking pyproject.toml...
@@ -94,19 +94,19 @@ if exist "pyproject.toml" (
     echo Renaming pyproject.toml to pyproject-old.toml...
     ren "pyproject.toml" "pyproject-old.toml"
     if errorlevel 1 (
-        echo ❌ Failed to rename pyproject.toml
+        echo  Failed to rename pyproject.toml
         pause
         exit /b 1
     )
-    echo ✅ pyproject.toml renamed to pyproject-old.toml
+    echo  pyproject.toml renamed to pyproject-old.toml
 ) else (
-    echo ℹ️  pyproject.toml not found, skipping rename
+    echo   pyproject.toml not found, skipping rename
 )
 
 :launch_gui
 echo [5/5] Launching GUI application...
 if not exist "gui_launcher.py" (
-    echo ❌ gui_launcher.py not found
+    echo  gui_launcher.py not found
     pause
     exit /b 1
 )
@@ -122,11 +122,11 @@ if exist ".venv\Scripts\python.exe" (
 )
 
 if errorlevel 1 (
-    echo ❌ Application failed to start
+    echo  Application failed to start
     pause
     exit /b 1
 )
 
 echo.
-echo ✅ Application completed successfully
+echo  Application completed successfully
 pause
