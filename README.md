@@ -19,7 +19,6 @@ AI-driven software development represents a significant milestone in technologic
 To use this GUI extension, follow these steps:
 
 1.  **Clone the Original Repository**:
-    Download the latest version of the GUI extension. Place the downloaded files into the `ai-hedge-fund` directory you cloned in the previous step.
     ```bash
     git clone https://github.com/hengruiyun/ai-hedge-fund-gui.git
     cd ai-hedge-fund-gui
