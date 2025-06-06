@@ -66,7 +66,7 @@ API密钥和其他设置通过 ai-hedge-fund-gui 目录下的 .env 文件以及G
 
 ## 联系方式
 
-Gmail: hengruiyun
+Email: 267278466@qq.com
 
 
 ## 免责声明
