@@ -62,7 +62,7 @@ This GUI extension is licensed under the Apache License 2.0. See the `LICENSE` f
 
 ## Contact
 
-Gmail: hengruiyun
+Email: 267278466@qq.com
 
 
 ## Disclaimer
