@@ -1,6 +1,22 @@
 import sys
 import os
 
+# 全局语言设置变量
+_global_language = "en"
+
+def set_global_language(language: str):
+    """设置全局语言"""
+    global _global_language
+    _global_language = language
+    # 同时设置环境变量，确保其他模块可以访问
+    os.environ["GUI_LANGUAGE"] = language
+
+def get_global_language() -> str:
+    """获取全局语言设置"""
+    global _global_language
+    # 优先使用全局变量，其次使用环境变量
+    return _global_language or os.environ.get("GUI_LANGUAGE", "en")
+
 # 添加项目根目录到Python路径
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if project_root not in sys.path:
@@ -164,13 +180,21 @@ def run_hedge_fund_gui(
     selected_analysts: list[str] = None,
     model_name: str = "gpt-4o",
     model_provider: str = "OpenAI",
-    show_agent_graph: bool = False
+    show_agent_graph: bool = False,
+    language: str = "en"
 ):
     """
     专门为GUI调用设计的函数，避免交互式选择
     基于virattt/ai-hedge-fund项目: https://github.com/virattt/ai-hedge-fund
     """
-    print("🚀 AI对冲基金分析系统启动")
+    # 设置全局语言
+    set_global_language(language)
+    
+    # 根据语言设置显示不同内容
+    if language == "zh":
+        print("🚀 AI对冲基金分析系统启动")
+    else:
+        print("🚀 AI Hedge Fund Analysis System Starting")
     print("=" * 60)
     
     try:
@@ -183,9 +207,15 @@ def run_hedge_fund_gui(
         
         # 确保tickers不为空
         if not tickers:
-            raise ValueError("请至少输入一个有效的股票代码")
+            if language == "zh":
+                raise ValueError("请至少输入一个有效的股票代码")
+            else:
+                raise ValueError("Please enter at least one valid ticker symbol")
         
-        print(f"📈 分析股票: {', '.join(tickers)}")
+        if language == "zh":
+            print(f"📈 分析股票: {', '.join(tickers)}")
+        else:
+            print(f"📈 Analyzing stocks: {', '.join(tickers)}")
         
         # 使用传入的分析师列表
         if not selected_analysts:
@@ -194,20 +224,33 @@ def run_hedge_fund_gui(
                 from src.utils.analysts import ANALYST_ORDER
                 selected_analysts = [value for display, value in ANALYST_ORDER]
             except ImportError:
-                print("⚠️  使用默认分析师配置")
+                if language == "zh":
+                    print("⚠️  使用默认分析师配置")
+                else:
+                    print("⚠️  Using default analyst configuration")
                 selected_analysts = ["warren_buffett", "peter_lynch", "technical_analyst"]
         
         # 显示选择的分析师
-        print(f"🧠 选定分析师: {len(selected_analysts)}位")
+        if language == "zh":
+            print(f"🧠 选定分析师: {len(selected_analysts)}位")
+        else:
+            print(f"🧠 Selected analysts: {len(selected_analysts)} analysts")
         
         # 显示模型配置
-        print(f"🤖 使用模型: {model_provider} - {model_name}")
+        if language == "zh":
+            print(f"🤖 使用模型: {model_provider} - {model_name}")
+        else:
+            print(f"🤖 Using model: {model_provider} - {model_name}")
         
         # 如果选择的是Ollama供应商，自动启用本地模式
         use_ollama = (model_provider == "Ollama")
         if use_ollama:
-            print("🏠 启用本地Ollama模式")
-            print(f"🤖 使用模型: {model_name}")
+            if language == "zh":
+                print("🏠 启用本地Ollama模式")
+                print(f"🤖 使用模型: {model_name}")
+            else:
+                print("🏠 Enabling local Ollama mode")
+                print(f"🤖 Using model: {model_name}")
             # 输出选择的Ollama模型信息，不检查模型是否存在
             # 注意：不检查模型是否存在，由用户自行确保模型可用
 
@@ -216,13 +259,19 @@ def run_hedge_fund_gui(
             try:
                 datetime.strptime(start_date, "%Y-%m-%d")
             except ValueError:
-                raise ValueError("开始日期必须为YYYY-MM-DD格式")
+                if language == "zh":
+                    raise ValueError("开始日期必须为YYYY-MM-DD格式")
+                else:
+                    raise ValueError("Start date must be in YYYY-MM-DD format")
 
         if end_date:
             try:
                 datetime.strptime(end_date, "%Y-%m-%d")
             except ValueError:
-                raise ValueError("结束日期必须为YYYY-MM-DD格式")
+                if language == "zh":
+                    raise ValueError("结束日期必须为YYYY-MM-DD格式")
+                else:
+                    raise ValueError("End date must be in YYYY-MM-DD format")
 
         # 设置开始和结束日期
         if not end_date:
@@ -232,19 +281,28 @@ def run_hedge_fund_gui(
             end_date_obj = datetime.strptime(end_date, "%Y-%m-%d")
             start_date = (end_date_obj - relativedelta(months=3)).strftime("%Y-%m-%d")
 
-        print(f"📅 分析时间段: {start_date} 至 {end_date}")
-        print(f"💰 初始资金: ${initial_cash:,.2f}")
-
-        # 创建工作流
-        print("⚙️  正在创建分析工作流...")
+        if language == "zh":
+            print(f"📅 分析时间段: {start_date} 至 {end_date}")
+            print(f"💰 初始资金: ${initial_cash:,.2f}")
+            # 创建工作流
+            print("⚙️  正在创建分析工作流...")
+        else:
+            print(f"📅 Analysis period: {start_date} to {end_date}")
+            print(f"💰 Initial capital: ${initial_cash:,.2f}")
+            # 创建工作流
+            print("⚙️  Creating analysis workflow...")
         
         # 增加错误处理，确保分析师存在
         try:
             workflow = create_workflow(selected_analysts)
             app = workflow.compile()
         except Exception as workflow_error:
-            print(f"⚠️  工作流创建失败: {workflow_error}")
-            print("尝试使用默认分析师...")
+            if language == "zh":
+                print(f"⚠️  工作流创建失败: {workflow_error}")
+                print("尝试使用默认分析师...")
+            else:
+                print(f"⚠️  Workflow creation failed: {workflow_error}")
+                print("Trying to use default analysts...")
             
             # 使用最小的默认分析师集合
             default_analysts = ["warren_buffett", "peter_lynch", "technical_analyst"]
@@ -261,9 +319,15 @@ def run_hedge_fund_gui(
                         file_path += selected_analyst + "_"
                     file_path += "graph.png"
                 save_graph_as_png(app, file_path)
-                print(f"📊 工作流图已保存: {file_path}")
+                if language == "zh":
+                    print(f"📊 工作流图已保存: {file_path}")
+                else:
+                    print(f"📊 Workflow graph saved: {file_path}")
             except Exception as e:
-                print(f"⚠️  工作流图生成失败: {e}")
+                if language == "zh":
+                    print(f"⚠️  工作流图生成失败: {e}")
+                else:
+                    print(f"⚠️  Workflow graph generation failed: {e}")
 
         # 初始化投资组合
         portfolio = {
@@ -289,7 +353,10 @@ def run_hedge_fund_gui(
             },
         }
 
-        print("\n🔄 开始运行AI分析...")
+        if language == "zh":
+            print("\n🔄 开始运行AI分析...")
+        else:
+            print("\n🔄 Starting AI analysis...")
         print("-" * 60)
 
         # 运行对冲基金分析
@@ -305,7 +372,10 @@ def run_hedge_fund_gui(
         )
         
         print("\n" + "=" * 60)
-        print("📊 分析完成，生成投资建议")
+        if language == "zh":
+            print("📊 分析完成，生成投资建议")
+        else:
+            print("📊 Analysis completed, generating investment recommendations")
         print("=" * 60)
         print_trading_output(result)
         

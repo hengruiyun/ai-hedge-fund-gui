@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-AI对冲基金分析软件 - GUI启动器 v1.0
+AI对冲基金分析软件 - GUI启动器 v1.1
 作者: HenghuiYun
 基于: virattt/ai-hedge-fund (https://github.com/virattt/ai-hedge-fund)
 功能: 为股票分析软件提供图形界面，支持配置保存和一键启动
@@ -568,7 +568,7 @@ class HedgeFundGUI:
         """初始化多语言翻译"""
         self.translations = {
             "en": {
-                "title": "AI Hedge Fund Analysis Software -GUI v1.0",
+                "title": "AI Hedge Fund Analysis Software -GUI v1.1",
                 "run_now": "Run Now",
                 "exit": "Exit",
                 "tabs": {
@@ -615,21 +615,21 @@ class HedgeFundGUI:
                     "analyzing": "AI analysis in progress...",
                     "terminal_output": "Analysis results will be displayed in the terminal window",
                     "check_terminal": "Please check the command line window for detailed output",
-                    "analysis_start": "🚀 Starting AI Hedge Fund Analysis",
-                    "analysis_complete": "✅ AI Hedge Fund Analysis Complete",
-                    "stock_codes": "📊 Stock Codes",
-                    "initial_funds": "💰 Initial Funds",
-                    "ai_model": "🤖 AI Model",
-                    "analysts": "👥 Analysts",
-                    "analysis_success": "🎉 Analysis results are displayed above, please check detailed recommendations",
+                    "analysis_start": "Starting AI Hedge Fund Analysis",
+                    "analysis_complete": "AI Hedge Fund Analysis Complete",
+                    "stock_codes": "Stock Codes",
+                    "initial_funds": "Initial Funds",
+                    "ai_model": "AI Model",
+                    "analysts": "Analysts",
+                    "analysis_success": "Analysis results are displayed above, please check detailed recommendations",
                     "analysis_complete_msg": "AI hedge fund analysis completed!",
                     "analysis_complete_detail": "Detailed analysis results are displayed in the terminal window that started the GUI.\nPlease check the command line for investment recommendations.",
-                    "analysis_error": "❌ Error occurred during analysis",
-                    "suggestion": "💡 Suggestion"
+                    "analysis_error": "Error occurred during analysis",
+                    "suggestion": "Suggestion"
                 }
             },
             "zh": {
-                "title": "AI对冲基金分析软件 - GUI启动器 v1.0",
+                "title": "AI对冲基金分析软件 - GUI启动器 v1.1",
                 "run_now": "立即运行",
                 "exit": "退出",
                 "tabs": {
@@ -674,17 +674,17 @@ class HedgeFundGUI:
                     "analyzing": "正在进行AI分析...",
                     "terminal_output": "分析结果将在启动GUI的终端窗口中显示",
                     "check_terminal": "请查看命令行窗口获取详细输出",
-                    "analysis_start": "🚀 开始AI对冲基金分析",
-                    "analysis_complete": "✅ AI对冲基金分析完成",
-                    "stock_codes": "📊 股票代码",
-                    "initial_funds": "💰 初始资金",
-                    "ai_model": "🤖 AI模型",
-                    "analysts": "👥 分析师",
-                    "analysis_success": "🎉 分析结果已在上方显示，请查看详细建议",
+                    "analysis_start": "开始AI对冲基金分析",
+                    "analysis_complete": "AI对冲基金分析完成",
+                    "stock_codes": "股票代码",
+                    "initial_funds": "初始资金",
+                    "ai_model": "AI模型",
+                    "analysts": "分析师",
+                    "analysis_success": "分析结果已在上方显示，请查看详细建议",
                     "analysis_complete_msg": "AI对冲基金分析已完成！",
                     "analysis_complete_detail": "详细分析结果已在启动GUI的终端窗口中显示。\n请查看命令行获取投资建议。",
-                    "analysis_error": "❌ 分析过程中发生错误",
-                    "suggestion": "💡 建议"
+                    "analysis_error": "分析过程中发生错误",
+                    "suggestion": "建议"
                 }
             }
         }
@@ -1447,7 +1447,8 @@ class HedgeFundGUI:
                         "selected_analysts": selected_analysts,
                         "model_name": model_name,
                         "model_provider": model_provider,
-                        "show_agent_graph": show_graph
+                        "show_agent_graph": show_graph,
+                        "language": self.language_var.get()
                     }
                     
                     # 直接运行分析，输出到原始终端
@@ -1760,20 +1761,50 @@ def detect_system_language():
     """检测系统语言"""
     try:
         import locale
-        # 替换已弃用的 getdefaultlocale 方法
+        import os
+        
+        # 方法1: 检查环境变量
+        lang_vars = ['LANG', 'LANGUAGE', 'LC_ALL', 'LC_MESSAGES']
+        for var in lang_vars:
+            lang = os.environ.get(var, '')
+            if lang and ('zh' in lang.lower() or 'chinese' in lang.lower()):
+                return "zh"
+        
+        # 方法2: 使用locale模块
         try:
             # 现代方法
             locale.setlocale(locale.LC_ALL, '')
             system_locale = locale.getlocale()[0]
         except (AttributeError, locale.Error):
             # 回退到旧方法，处理某些系统上的兼容性问题
-            system_locale = locale.getdefaultlocale()[0]
+            try:
+                system_locale = locale.getdefaultlocale()[0]
+            except:
+                system_locale = None
             
         if system_locale:
-            if system_locale.startswith('zh'):
+            system_locale = system_locale.lower()
+            if ('zh' in system_locale or 'chinese' in system_locale or 
+                'cn' in system_locale or 'taiwan' in system_locale or 
+                'hong' in system_locale):
                 return "zh"
+        
+        # 方法3: Windows系统特殊检测
+        if os.name == 'nt':
+            try:
+                import ctypes
+                # 获取Windows系统的语言ID
+                lang_id = ctypes.windll.kernel32.GetUserDefaultUILanguage()
+                # 中文语言ID范围 (简体中文2052, 繁体中文1028, 香港中文3076, 澳门中文5124等)
+                chinese_lang_ids = [1028, 2052, 3076, 4100, 5124]
+                if lang_id in chinese_lang_ids:
+                    return "zh"
+            except:
+                pass
+                
     except Exception:
         pass
+    
     return "en"  # 默认英文
 
 def test_package_integrity():
@@ -1917,10 +1948,17 @@ def main():
         
         app = HedgeFundGUI(root)
         
-        # 设置默认语言 (如果没有从配置文件加载)
+        # 设置默认语言 
         if not os.path.exists(app.config_file):
+            # 如果没有配置文件，使用系统语言
             app.language_var.set(system_lang)
             app.change_language()  # 应用语言变更
+        else:
+            # 即使有配置文件，也检查是否需要应用系统语言作为默认值
+            current_lang = app.language_var.get()
+            if not current_lang or current_lang not in ["en", "zh"]:
+                app.language_var.set(system_lang)
+                app.change_language()  # 应用语言变更
         
         # 设置退出处理
         root.protocol("WM_DELETE_WINDOW", app.quit_app)
