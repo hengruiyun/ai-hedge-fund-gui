@@ -28,7 +28,8 @@ To use this GUI extension, follow these steps:
     gui
     ```
 
-![a1](https://github.com/user-attachments/assets/14183595-f470-41dc-b5c2-1f902f5cb128)
+![report_cn](https://github.com/user-attachments/assets/35c67ad9-fc93-4fd4-a9d5-b7a731f5a7d5)
+
 
 ## Configuration Notes
 
