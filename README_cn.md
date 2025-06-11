@@ -28,7 +28,8 @@ AI驱动的软件开发代表了技术革新的重要里程碑。通过AI完整�
     ```bash
     gui
     ```
-![a8](https://github.com/user-attachments/assets/6ad676c8-d40f-4c11-85a3-229ab1f258be)
+![report_zh](https://github.com/user-attachments/assets/bf4c6c33-9236-4549-97e8-0738e7ccc85f)
+
 
 
 ## 配置说明
