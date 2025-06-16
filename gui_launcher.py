@@ -767,7 +767,7 @@ class HedgeFundGUI:
         left_buttons = ttk.Frame(button_frame)
         left_buttons.grid(row=0, column=0, sticky=tk.W)
         
-        hengrui_label = ttk.Label(left_buttons, text="HengruiYun", 
+        hengrui_label = ttk.Label(left_buttons, text="267278466@qq.com", 
                                 style="Link.TLabel", cursor="hand2")
         hengrui_label.grid(row=0, column=0, padx=(0, 10))
         # 点击时打开浏览器
