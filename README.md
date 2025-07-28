@@ -2,33 +2,24 @@
 
 This project provides a Graphical User Interface (GUI) for the AI hedge fund analysis software originally developed by virattt. It aims to simplify interaction with the powerful underlying AI-driven financial analysis tools.
 
-OSM: Fully Developed by AI
-AI-driven software development represents a significant milestone in technological innovation. Through the complete development of practical tools like OSM using AI, we demonstrate artificial intelligence's exceptional capabilities in code generation, system design, and problem-solving. This development approach not only improves efficiency, reduces human resource costs and time investment in traditional development, but also ensures consistency in code quality. AI can quickly absorb best practices, avoid common errors, and provide innovative solutions. It serves as powerful evidence of the integration between artificial intelligence and software engineering, revealing the direction of paradigm shifts in future development.
-
-![gui](https://github.com/user-attachments/assets/1790abff-ab95-4822-89d8-127cfabec6ca)
 
 ## Features
 
 *   **Graphical User Interface**: An intuitive interface for managing and running financial analyses.
 *   **Simplified Workflow**: Easily configure stock tickers, date ranges, API keys, and AI models.
 *   **Multi-AI Provider Support**: Compatible with various AI model service providers.
-*   **Configuration Management**: Save and load your analysis settings.
+
 
 ## Installation and Usage
 
 To use this GUI extension, follow these steps:
 
-1.  **Clone the Original Repository**:
-    ```bash
-    git clone https://github.com/hengruiyun/ai-hedge-fund-gui.git
-    cd ai-hedge-fund-gui
-    ```
-2.  **Run the GUI**:
+
+  **Run the GUI**:
     ```bash
     gui
     ```
 
-![report_cn](https://github.com/user-attachments/assets/35c67ad9-fc93-4fd4-a9d5-b7a731f5a7d5)
 
 
 ## Configuration Notes
@@ -40,16 +31,6 @@ API keys and other settings are managed via the `.env` file in the `ai-hedge-fun
 *   **Model Selection**: Select your preferred AI model provider and model name in the "Model Configuration" tab.
 *   **Analysis Parameters**: Set stock tickers, date ranges, initial cash, etc., in the "Parameters" tab.
 
-Settings configured in the GUI (including API keys) will be saved to the `hedge_fund_config.json` file, and relevant API keys will also be written to the `.env` file.
-
-## Troubleshooting
-
-*   **Missing Dependencies**: Ensure all dependencies in `requirements.txt` are correctly installed in your activated Python environment. Run `python dependency_checker.py` for a quick check.
-*   **API Key Errors**: Double-check that your API keys are entered correctly, are valid, and have sufficient quota.
-*   **GUI Launch Failure**:
-    *   Confirm Python is installed and accessible (Python 3.10+ recommended).
-    *   Ensure `tkinter` (usually part of standard Python installations) is available.
-    *   Try reinstalling dependencies: `pip install -r requirements.txt --force-reinstall`.
 
 ## License
 

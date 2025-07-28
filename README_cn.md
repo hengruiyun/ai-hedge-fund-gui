@@ -2,33 +2,22 @@
 
 本项目为 virattt 最初开发的AI对冲基金分析软件提供了一个图形用户界面（GUI）。它旨在简化与强大的底层AI驱动金融分析工具的交互。
 
-OSM：这是全AI 开发的软件
-AI驱动的软件开发代表了技术革新的重要里程碑。通过AI完整开发OSM这样的实用工具，我们展示了人工智能在代码生成、系统设计和问题解决方面的卓越能力。这种开发模式不仅提高了效率，降低了传统开发中的人力成本和时间投入，还能确保代码质量的一致性。AI能够快速吸收最佳实践，避免常见错误，并提供创新解决方案。人工智能与软件工程融合的有力证明，揭示了未来开发范式的转变方向。
-
-![gui_cn](https://github.com/user-attachments/assets/46d2e0a6-a29c-4464-8383-fe25a3069579)
 
 ## 功能特性
 
 *   **图形用户界面**：一个直观的界面，用于管理和运行金融分析。
 *   **简化工作流程**：轻松配置股票代码、日期范围、API密钥和AI模型。
 *   **多AI服务商支持**：兼容多种AI模型服务提供商。
-*   **配置管理**：保存和加载您的分析设置。
 
 
 ## 安装与使用
 
 要使用此GUI扩展，请按照以下步骤操作：
 
-1.  **克隆代码仓库**：
-    ```bash
-    git clone https://github.com/hengruiyun/ai-hedge-fund-gui.git
-    cd ai-hedge-fund-gui
-    ```
-2.  **运行GUI**：
+  **运行GUI**：
     ```bash
     gui
     ```
-![report_zh](https://github.com/user-attachments/assets/bf4c6c33-9236-4549-97e8-0738e7ccc85f)
 
 
 
@@ -39,19 +28,7 @@ API密钥和其他设置通过 ai-hedge-fund-gui 目录下的 .env 文件以及G
 *   **分析师选择**：在"分析师"选项卡中选择参与分析的AI分析师。
 *   **API密钥**：在GUI的"API密钥"选项卡中输入您的API密钥，或通过编辑 .env 文件输入。通常至少需要一个AI提供商的密钥。
 *   **模型选择**：在"模型配置"选项卡中选择您偏好的AI模型提供商和模型名称。
-*   **分析参数**：在"参数"选项卡中设置股票代码、日期范围、初始现金等。
 
-在GUI中配置的设置（包括API密钥）将保存到 hedge_fund_config.json 文件中，相关的API密钥也会写入 .env 文件。
-
-
-## 故障排除
-
-*   **缺少依赖项**：确保 requirements.txt 中的所有依赖项已在您激活的Python环境中正确安装。运行 python dependency_checker.py 进行快速检查。
-*   **API密钥错误**：仔细检查您的API密钥是否正确输入、是否有效，并确保有足够的配额。
-*   **GUI启动失败**：
-    *   确认已安装并可访问 Python（推荐 Python 3.10+）。
-    *   确保 tkinter（通常是 Python标准安装的一部分）可用。
-    *   尝试重新安装依赖项：pip install -r requirements.txt --force-reinstall。
 
 
 ## 许可证
