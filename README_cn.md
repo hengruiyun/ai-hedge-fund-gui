@@ -3,7 +3,7 @@
 本项目为 virattt 最初开发的AI对冲基金分析软件提供了一个图形用户界面（GUI）。它旨在简化与强大的底层AI驱动金融分析工具的交互。
 
 ## 注意
-*   **不支持A股**：一此软件为国外作者制作，不支持A股/港股，如需A股，请改用[AI基金大师(https://github.com/hengruiyun/AI-Fund-Master)]。
+*   **不支持A股**：此软件为国外作者制作，不支持A股/港股，如需A股，请改用[AI基金大师](https://github.com/hengruiyun/AI-Fund-Master)。
   
 ## 功能特性
 
