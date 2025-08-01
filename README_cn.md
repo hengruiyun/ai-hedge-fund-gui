@@ -2,12 +2,16 @@
 
 本项目为 virattt 最初开发的AI对冲基金分析软件提供了一个图形用户界面（GUI）。它旨在简化与强大的底层AI驱动金融分析工具的交互。
 
-
+## 注意
+*   **不支持A股**：一此软件为国外作者制作，不支持A股/港股，如需A股，请改用[AI基金大师(https://github.com/hengruiyun/AI-Fund-Master)]。
+  
 ## 功能特性
 
 *   **图形用户界面**：一个直观的界面，用于管理和运行金融分析。
 *   **简化工作流程**：轻松配置股票代码、日期范围、API密钥和AI模型。
 *   **多AI服务商支持**：兼容多种AI模型服务提供商。
+
+<img width="1258" height="974" alt="aifc" src="https://github.com/user-attachments/assets/c191b591-8455-4e3e-ba8f-4eaeb4ff1702" />
 
 
 ## 安装与使用
@@ -15,7 +19,7 @@
 要使用此GUI扩展，请按照以下步骤操作：
 
   **运行GUI**：
-    ```bash
+    ```
     gui
     ```
 
