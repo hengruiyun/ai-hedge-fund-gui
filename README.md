@@ -2,7 +2,9 @@
 
 This project provides a Graphical User Interface (GUI) for the AI hedge fund analysis software originally developed by virattt. It aims to simplify interaction with the powerful underlying AI-driven financial analysis tools.
 
-
+## 注意
+*   **不支持A股**：此软件为国外作者制作，不支持A股/港股，如需A股，请改用[AI基金大师](https://github.com/hengruiyun/AI-Fund-Master)。
+  
 ## Features
 
 *   **Graphical User Interface**: An intuitive interface for managing and running financial analyses.
