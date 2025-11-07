@@ -1,0 +1,50 @@
+{
+  "ai_config": {
+    "provider": "Ollama",
+    "model": "qwen3:0.6b"
+  },
+  "analysts_config": {
+    "selected_analysts": {
+      "warren_buffett": true,
+      "charlie_munger": true,
+      "peter_lynch": true,
+      "phil_fisher": false,
+      "ben_graham": false,
+      "aswath_damodaran": false,
+      "bill_ackman": false,
+      "cathie_wood": false,
+      "michael_burry": false,
+      "stanley_druckenmiller": false,
+      "rakesh_jhunjhunwala": false,
+      "technical_analyst": false
+    },
+    "total_selected": 3
+  },
+  "trading_config": {
+    "tickers": "399006",
+    "show_reasoning": true
+  },
+  "ui_config": {
+    "window_geometry": null
+  },
+  "provider": "Ollama",
+  "model": "qwen3:0.6b",
+  "selected_analysts": {
+    "warren_buffett": true,
+    "charlie_munger": true,
+    "peter_lynch": true,
+    "phil_fisher": false,
+    "ben_graham": false,
+    "aswath_damodaran": false,
+    "bill_ackman": false,
+    "cathie_wood": false,
+    "michael_burry": false,
+    "stanley_druckenmiller": false,
+    "rakesh_jhunjhunwala": false,
+    "technical_analyst": false
+  },
+  "tickers": "399006",
+  "show_reasoning": true,
+  "config_version": "2.0",
+  "app_version": "3.1.0"
+}

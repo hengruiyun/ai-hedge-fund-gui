@@ -1,54 +1,292 @@
-# AI Hedge Fund Analysis Software - GUI Extension  [中文](https://github.com/hengruiyun/ai-hedge-fund-gui/blob/main/README_cn.md)
+# AI 基金大师 - 智能投资分析系统   [另一产品：AI股票大师](https://github.com/hengruiyun/AI-Stock-Master/blob/main/usage.md)
 
-This project provides a Graphical User Interface (GUI) for the AI hedge fund analysis software originally developed by virattt. It aims to simplify interaction with the powerful underlying AI-driven financial analysis tools.
+**基于AI的智能投资分析系统，专为中国市场设计**
 
-## 注意
-*   **不支持A股**：此软件为国外作者制作，不支持A股/港股，如需A股，请改用[AI基金大师](https://github.com/hengruiyun/AI-Fund-Master)。
-  
-## Features
+**12位投资大师 | 支持A股 | 本地AI | 专业分析**
 
-*   **Graphical User Interface**: An intuitive interface for managing and running financial analyses.
-*   **Simplified Workflow**: Easily configure stock tickers, date ranges, API keys, and AI models.
-*   **Multi-AI Provider Support**: Compatible with various AI model service providers.
-
-
-## Installation and Usage
-
-To use this GUI extension, follow these steps:
-
-
-  **Run the GUI**:
-    ```bash
-    gui
-    ```
+<img width="1018" height="747" alt="afmc-1" src="https://github.com/user-attachments/assets/04d9727f-6d8a-48da-be11-3cc907299d0a" />
 
 
 
-## Configuration Notes
+## 项目特色
 
-API keys and other settings are managed via the `.env` file in the `ai-hedge-fund-gui` directory and through the GUI itself.
+- **12位投资大师**: 集成12位世界级投资分析师的投资理念
+- **专业分析报告**: 生成详细的HTML投资分析报告
+- **专为A股优化**: 深度集成AKShare，完美支持中国A股市场数据
+- **本地AI驱动**: 基于Ollama本地大模型，保护数据隐私
+- **完全免费**: 无需任何API密钥，无须显卡，所有功能完全免费使用
+- **智能分析系统**: 无需AI大模型的高效分析引擎
+- **迷你投资大师**: 轻量级投资决策助手，快速生成投资建议
 
-*   **Analyst Selection**: Choose the AI analysts to participate in the analysis in the "Analysts" tab.
-*   **API Keys**: Enter your API keys in the "API Keys" tab of the GUI or by editing the `.env` file. At least one AI provider key is usually required.
-*   **Model Selection**: Select your preferred AI model provider and model name in the "Model Configuration" tab.
-*   **Analysis Parameters**: Set stock tickers, date ranges, initial cash, etc., in the "Parameters" tab.
+## 核心功能
+
+### 智能分析系统
+
+我们的智能分析系统采用创新的算法设计，**无需依赖AI大模型**即可提供专业的投资分析：
+
+#### 技术特点
+- **轻量级架构**: 基于传统算法和规则引擎，运行速度快，资源占用少
+- **高效分析**: 毫秒级响应，实时生成分析结果
+- **准确可靠**: 基于成熟的金融分析理论和量化指标
+
+#### 分析维度
+- **基础价格分析**: 价格趋势、波动率、支撑阻力位分析
+- **量价关系分析**: 成交量与价格变化的关联性分析
+- **技术指标分析**: MA、MACD、RSI、KDJ等多种技术指标
+- **市场情绪分析**: 基于价格行为的市场情绪判断
+- **行业对比分析**: 个股与行业平均水平的比较
+- **风险评估**: 多维度风险指标计算和评级
+
+### 迷你投资大师
+
+迷你投资大师是我们的核心创新功能，它将12位投资大师的投资理念浓缩为轻量级的决策引擎：
+
+#### 核心特点
+- **无需AI大模型**: 基于规则引擎和量化算法，无需复杂的AI模型
+- **快速决策**: 秒级生成投资建议，效率极高
+- **多维评估**: 综合多位投资大师的不同视角
+- **置信度评分**: 为每个建议提供置信度评估
+- **风险等级**: 自动评估投资风险等级
+
+#### 投资大师策略集成
+- **价值投资策略**: 巴菲特、芒格、格雷厄姆的价值投资理念
+- **成长投资策略**: 彼得·林奇、凯西·伍德的成长股筛选
+- **逆势投资策略**: 迈克尔·伯里的逆向思维分析
+- **宏观投资策略**: 德鲁肯米勒的宏观经济判断
+- **量化分析策略**: 达莫达兰的严格估值方法
+- **技术分析策略**: 专业的技术面分析
 
 
-## License
+## 投资分析师团队
 
-This GUI extension is licensed under the Apache License 2.0. See the `LICENSE` file for more details.
-
-## Acknowledgements
-
-*   This project is an extension of virattt's `ai-hedge-fund` project. We thank them for their original work and for open-sourcing it. You can find the original project at: [https://github.com/virattt/ai-hedge-fund](https://github.com/virattt/ai-hedge-fund).
-*   We use `uv`, an extremely fast Python package installer and resolver, written in Rust, developed by Astral. More information at: [https://github.com/astral-sh/uv](https://github.com/astral-sh/uv).
+我们的AI系统集成了12位世界级投资大师的投资理念和分析方法：
 
 
-## Contact
+### 价值投资大师
 
-Email: 267278466@qq.com
+#### 沃伦·巴菲特 (Warren Buffett)
+- **称号**: 奥马哈先知
+- **投资风格**: 价值投资
+- **核心理念**: 寻找具有护城河的优质企业，长期持有
+- **关键指标**: ROE、自由现金流、债务水平、竞争优势
+
+#### 查理·芒格 (Charlie Munger)
+- **称号**: 理性思考者
+- **投资风格**: 价值投资
+- **核心理念**: 多元思维模型，寻找"伟大的企业"
+- **关键指标**: 商业模式质量、管理层能力、长期竞争力
+
+#### 本杰明·格雷厄姆 (Benjamin Graham)
+- **称号**: 价值投资之父
+- **投资风格**: 价值投资
+- **核心理念**: 安全边际，买入被低估的股票
+- **关键指标**: 格雷厄姆数字、P/E比率、流动比率、净资产价值
+
+### 成长投资专家
+
+#### 彼得·林奇 (Peter Lynch)
+- **称号**: 十倍股投资者
+- **投资风格**: 成长投资
+- **核心理念**: 投资你了解的企业，寻找"十倍股"
+- **关键指标**: PEG比率、盈利增长率、行业前景
+
+#### 凯西·伍德 (Cathie Wood)
+- **称号**: 成长投资女王
+- **投资风格**: 颠覆性成长投资
+- **核心理念**: 投资颠覆性创新技术
+- **关键指标**: 创新能力、市场规模、技术护城河
+
+#### 菲利普·费雪 (Phil Fisher)
+- **称号**: 闲聊投资法大师
+- **投资风格**: 成长投资
+- **核心理念**: 深度研究，长期持有优质成长股
+- **关键指标**: 管理层质量、研发投入、市场地位
+
+### 逆势/激进投资者
+
+#### 迈克尔·伯里 (Michael Burry)
+- **称号**: 大空头逆势投资者
+- **投资风格**: 逆势投资
+- **核心理念**: 寻找被市场错误定价的机会
+- **关键指标**: 估值倍数、财务异常、市场情绪
+
+#### 比尔·阿克曼 (Bill Ackman)
+- **称号**: 激进投资者
+- **投资风格**: 激进投资
+- **核心理念**: 积极参与公司治理，推动价值实现
+- **关键指标**: 企业价值、管理层效率、股东回报
+
+### 宏观/全球投资者
+
+#### 斯坦利·德鲁肯米勒 (Stanley Druckenmiller)
+- **称号**: 宏观投资者
+- **投资风格**: 宏观投资
+- **核心理念**: 基于宏观经济趋势的投资决策
+- **关键指标**: 宏观经济指标、货币政策、全球趋势
+
+#### 拉凯什·琼琼瓦拉 (Rakesh Jhunjhunwala)
+- **称号**: 印度大牛
+- **投资风格**: 宏观投资
+- **核心理念**: 结合宏观判断和个股分析
+- **关键指标**: 经济周期、行业轮动、盈利能力
+
+### 量化/分析专家
+
+#### 阿斯沃斯·达莫达兰 (Aswath Damodaran)
+- **称号**: 估值学教授
+- **投资风格**: 量化分析
+- **核心理念**: 严格的估值方法论
+- **关键指标**: DCF模型、风险调整收益、内在价值
+
+### 技术/情绪分析师
+
+#### 技术分析师
+- **专长**: 图表模式分析
+- **核心理念**: 价格行为分析
+- **关键指标**: 技术指标、支撑阻力、趋势分析
+
+### 迷你投资大师工作流程
+
+迷你投资大师通过以下步骤生成投资建议：
+
+1. **数据收集**: 获取股票的基础数据、财务数据和技术指标
+2. **多维分析**: 12位投资大师同时从各自角度进行分析
+3. **策略评分**: 每位大师根据自己的投资理念给出评分
+4. **权重计算**: 根据市场环境和股票特点调整各大师权重
+5. **综合决策**: 生成最终的投资建议和置信度
+6. **风险评估**: 评估投资风险等级和潜在风险点
+7. **建议输出**: 提供清晰的投资建议和操作指导
+
+<img width="1416" alt="afm-7" src="https://github.com/user-attachments/assets/56dcccfa-acec-43ed-b39a-b05196097022" />
 
 
-## Disclaimer
+## 安装指南
 
-This software is intended for educational and research purposes only and does not constitute real trading or investment advice. The creators and contributors of this software are not responsible for any financial losses incurred from its use. Always consult a qualified financial advisor before making investment decisions. 
+### 快速安装
+
+### 一键启动
+```bash
+# 启动GUI界面
+AI-FUND-MASTER.bat
+```
+
+
+
+## 数据来源
+
+### 主要数据源
+- **AKShare**: 中国A股市场数据的主要来源
+  - 财务报表数据
+  - 实时行情数据
+  - 估值指标数据
+  - 财务比率数据
+
+### 数据覆盖范围
+- **基础数据**: 股价、成交量、市值等
+- **财务数据**: 资产负债表、利润表、现金流量表
+- **估值指标**: P/E、P/B、PEG、EV/EBITDA等
+- **财务比率**: ROE、ROA、流动比率、债务比率等
+- **增强数据**: 自动计算的衍生指标
+
+### 数据质量保证
+- **实时更新**: 数据来源于权威金融数据提供商
+- **数据验证**: 多重数据验证和清洗机制
+- **缺失补全**: 智能算法补全缺失数据
+- **异常检测**: 自动识别和处理异常数据
+
+
+## 技术架构
+
+### 系统架构
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   GUI界面       │    │   数据获取层     │    │   AI分析层      │
+│                 │    │                 │    │                 │
+│ • 用户交互      │───▶│ • AKShare API   │───▶│ • Ollama LLM    │
+│ • 参数设置      │    │ • 数据缓存      │    │ • 15位分析师    │
+│ • 结果展示      │    │ • 数据增强      │    │ • 多维度分析    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         │                       │                       │
+         ▼                       ▼                       ▼
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   报告生成层     │    │   数据存储层     │    │   工具层        │
+│                 │    │                 │    │                 │
+│ • HTML报告      │    │ • 本地缓存      │    │ • 财务计算      │
+│ • 图表生成      │    │ • 数据库        │    │ • 技术指标      │
+│ • 结果导出      │    │ • 文件存储      │    │ • 风险评估      │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
+
+### 核心组件
+
+#### 数据层
+- **AKShare适配器**: 统一的数据接口
+- **数据增强器**: 智能计算缺失指标
+- **缓存管理**: 提高数据访问效率
+
+#### AI分析层
+- **Ollama集成**: 本地大语言模型
+- **分析师代理**: 12个专业投资分析师
+
+#### 应用层
+- **GUI界面**: 用户友好的图形界面
+- **报告生成**: 专业的HTML分析报告
+- **结果可视化**: 图表和数据展示
+
+
+## 许可证
+
+本项目采用 Apache 2.0 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
+
+
+## 致谢
+
+### 特别感谢
+- **[virattt/ai-hedge-fund](https://github.com/virattt/ai-hedge-fund)**: 本项目的原始灵感来源
+- **AKShare团队**: 提供优质的中国金融数据接口
+- **Ollama团队**: 提供优秀的本地AI解决方案
+- **uv**: 感谢Charlie Marsh和Astral团队开发的极速Python包管理器uv，为项目依赖管理提供了卓越的性能
+- **开源社区**: 所有贡献者和支持者
+
+### 向投资大师致敬
+感谢所有投资大师的智慧和理念，为我们的AI系统提供了宝贵的投资哲学：
+- 沃伦·巴菲特 & 查理·芒格
+- 彼得·林奇
+- 菲利普·费雪
+- 本杰明·格雷厄姆
+- 比尔·阿克曼
+- 凯西·伍德
+- 迈克尔·伯里
+- 斯坦利·德鲁肯米勒
+- 拉凯什·琼琼瓦拉
+- 阿斯沃斯·达莫达兰
+- 以及所有其他杰出的投资思想家
+
+
+## 联系方式
+
+如果您对本系统有任何问题或建议，请联系：
+- **项目创建者：** 267278466@qq.com
+- **技术支持：** 通过QQ邮箱联系
+
+
+##  免责声明
+
+本项目仅供教育和研究编程目的使用。
+
+- ❌ 不构成投资建议
+- ❌ 不保证投资收益
+- ❌ 不承担投资损失责任
+- ✅ 请在专业人士指导下进行投资决策
+- ✅ 投资有风险，入市需谨慎
+
+---
+
+<div align="center">
+
+**🌟 如果这个项目对您有帮助，请给我们一个Star！🌟**
+
+**让AI为您的投资决策提供专业支持**
+
+</div>
